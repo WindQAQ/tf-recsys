@@ -197,7 +197,7 @@ class SVD(BaseModel):
                     ('mae', mae(ratings, pred))
                 ]
 
-                if validation_data is not None:
+                if validation_data is not None and step == steps_per_epoch:
                     valid_x, valid_y = validation_data
                     valid_pred = self.predict(valid_x)
 
@@ -206,9 +206,8 @@ class SVD(BaseModel):
                         ('val_mae', mae(valid_y, valid_pred))
                     ]
 
-                pbar.update(step, values=update_values)
-
-            print()
+                pbar.update(step, values=update_values,
+                            force=(step == steps_per_epoch))
 
     def train(self, x, y, epochs=100, batch_size=1024, validation_data=None):
 
