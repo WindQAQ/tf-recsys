@@ -23,7 +23,7 @@ class SVD(BaseModel):
     def _create_placeholders(self):
         """Returns the placeholders.
         """
-        with tf.variable_scope('input'):
+        with tf.variable_scope('placeholder'):
             users = tf.placeholder(tf.int32, shape=[None, ], name='users')
             items = tf.placeholder(tf.int32, shape=[None, ], name='items')
             ratings = tf.placeholder(
@@ -144,9 +144,10 @@ class SVD(BaseModel):
                 name='objective')
 
             try:
-                optimizer = tf.contrib.keras.optimizers.Nadam().minimize(objective)
+                optimizer = tf.contrib.keras.optimizers.Nadam(
+                ).minimize(objective, name='optimizer')
             except:
-                optimizer = tf.train.AdamOptimizer().minimize(objective)
+                optimizer = tf.train.AdamOptimizer().minimize(objective, name='optimizer')
 
         return optimizer
 
