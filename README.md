@@ -41,12 +41,12 @@ config.min_value = np.min(y)
 config.max_value = np.max(y)
 
 with tf.Session() as sess:
-	# For SVD++ algorithm, if `dual` is True, then the dual term of items' 
-    # implicit feedfack will be added into the original SVD++ algorithm.
-	# model = SVDPP(config, sess, dual=False)
+    # For SVD++ algorithm, if `dual` is True, then the dual term of items' 
+    # implicit feedfack will be added into the original SVD++ algorithm.
+    # model = SVDPP(config, sess, dual=False)
     # model = SVDPP(config, sess, dual=True)
-	model = SVD(config, sess)
-   	model.train(x_train, y_train, validation_data=(
+    model = SVD(config, sess)
+    model.train(x_train, y_train, validation_data=(
         x_test, y_test), epochs=20, batch_size=1024)
         
     y_pred = model.predict(x_test)
