@@ -44,7 +44,7 @@ config.max_value = np.max(y)
 
 with tf.Session() as sess:
     # For SVD++ algorithm, if `dual` is True, then the dual term of items' 
-    # implicit feedfack will be added into the original SVD++ algorithm.
+    # implicit feedback will be added into the original SVD++ algorithm.
     # model = SVDPP(config, sess, dual=False)
     # model = SVDPP(config, sess, dual=True)
     model = SVD(config, sess)
