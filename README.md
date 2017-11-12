@@ -19,6 +19,8 @@ or follow the instructions at [Installing Tensorflow](https://www.tensorflow.org
 ## Example
 
 ```python
+import numpy as np
+import tensorflow as tf
 from tfcf.metrics import mae
 from tfcf.metrics import rmse
 from tfcf.datasets import ml1m
