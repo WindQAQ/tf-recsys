@@ -16,6 +16,32 @@ pip install tensorflow-gpu
 ```
 or follow the instructions at [Installing Tensorflow](https://www.tensorflow.org/install/).
 
+## Algorithms
+
+### SVD
+
+SVD algorithm does matrix factorization via the following formula:
+
+![SVD](http://latex.codecogs.com/gif.latex?r_%7Bui%7D%20%3D%20%5Cmu%20&plus;%20b_u%20&plus;%20b_i%20&plus;%20p_u%20q_i)
+
+LHS is the prediction rating. The objective function is summation of the L2 loss between prediction and real rating and the regularization terms. For parameter updating, the gradient descent is used to minimize objective function.
+
+### SVD++
+
+Similar to SVD, the original SVD++ algorithm incorporate *implicit feedback* of users.
+
+![SVD++](http://latex.codecogs.com/gif.latex?r_%7Bui%7D%20%3D%20%5Cmu%20&plus;%20b_u%20&plus;%20b_i%20&plus;%20%28p_u%20&plus;%20%5Cfrac%7B1%7D%7B%7CN%28u%29%7C%7D%20%5Csum_%7Bj%20%5Cin%20N%28u%29%7D%20y_j%29%20q_i)
+
+The ![implicit feedback of user](http://latex.codecogs.com/gif.latex?N%28u%29) here is the set of implicit feedback of users.
+
+In this package, we also provide *dual* option for SVD++, or incoporate the implicit feedback of items. The equation can be re-written as follows:
+
+![dual SVD++](http://latex.codecogs.com/gif.latex?r_%7Bui%7D%20%3D%20%5Cmu%20&plus;%20b_u%20&plus;%20b_i%20&plus;%20%28p_u%20&plus;%20%5Cfrac%7B1%7D%7B%7CN%28u%29%7C%7D%20%5Csum_%7Bj%20%5Cin%20N%28u%29%7D%20y_j%29%20%28q_i%20&plus;%20%5Cfrac%7B1%7D%7B%7CH%28i%29%7C%7D%20%5Csum_%7Bj%20%5Cin%20H%28i%29%7D%20g_j%29)
+
+where ![implicit feedback of item](http://latex.codecogs.com/gif.latex?H%28i%29) is the set of implicit feedback of items.
+
+In our experiments, dual SVD++ outperform both original SVD++ and SVD but with slower training procedure.
+
 ## Example
 
 ```python
