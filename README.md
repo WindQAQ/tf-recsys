@@ -107,7 +107,7 @@ The experiments are set up on [MovieLens 100K][MovieLens100K] and [MovieLens 1M]
 |    SVD++   | 0.84846 | 0.66306 |        40        |
 | Dual SVD++ | 0.83672 | 0.65256 |        50        |
 
-Some similar experiments can be found at [MyMediaLite][MyMediaLite] and [Surprise][Surprise].
+Some similar experiments can be found at [MyMediaLite][MyMediaLite], [Surprise][Surprise] and [LibRec][LibRec].
 
 
 ## References
@@ -117,10 +117,13 @@ Some similar experiments can be found at [MyMediaLite][MyMediaLite] and [Surpris
 
 [Surprise][Surprise]
 
+[LibRec][LibRec]
+
 Also see my [ML2017][ML2017] repo, there is a [Keras][Keras] implementation for SVD and SVD++ in [hw6][hw6].
 
 [MovieLens100K]: https://grouplens.org/datasets/movielens/100k/
 [MovieLens1M]: https://grouplens.org/datasets/movielens/1m/
+[LibRec]: https://www.librec.net/release/v1.3/example.html
 [Tensorflow]: https://www.tensorflow.org/
 [Keras]: https://keras.io/
 [MyMediaLite]: http://www.mymedialite.net/examples/datasets.html
