@@ -60,8 +60,6 @@ class BaseModel(object):
         self._saver = tf.train.import_meta_graph(model_path + '.meta')
         self._saver.restore(self._sess, model_path)
 
-        print
-
         for name in tensor_names:
             attr = '_' + name.split('/')[1].split(':')[0]
             setattr(self, attr, tf.get_default_graph().get_tensor_by_name(name))
