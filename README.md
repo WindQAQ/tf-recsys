@@ -130,3 +130,6 @@ Also see my [ML2017][ML2017] repo, there is a [Keras][Keras] implementation for 
 [Surprise]: https://github.com/NicolasHug/Surprise
 [ML2017]: https://github.com/WindQAQ/ML2017
 [hw6]: https://github.com/WindQAQ/ML2017/blob/master/hw6/train.py
+
+## Contact
+Issues and pull requests are welcomed. Feel free to [contact me](mailto:windqaq@gmail.com) if there's any problems.
